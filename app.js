@@ -11,7 +11,9 @@ require("./Models/index")
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-
+app.use('/',(req, res, next) =>{
+  res.json({message: 'hello>>> this is main route for mobile flutter home work'})
+})
 app.use('/auth',authRouter)
 app.use('/tourist',is_auth,touristRoute)
 app.use('/admin',is_auth,is_admin,adminRoute)
@@ -22,7 +24,7 @@ app.use((error,req, res, next) =>{
   res.json({message:error.message})
 })
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(app.listen(3000))
   .catch((err) => {
     console.log(err);
