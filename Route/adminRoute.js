@@ -25,7 +25,7 @@ router.delete('/drivers/:id', driverController.deleteDriver);
 
 
 
-const guideController = require('../Controller/guideController');
+const guideController = require('../Controllers/guideController');
 
 // Create a new guide
 router.post('/guides',  guideController.createGuide);

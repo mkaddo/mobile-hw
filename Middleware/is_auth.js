@@ -1,9 +1,8 @@
 const jwt = require("jsonwebtoken");
-const Users = require("../Models/Tourist");
-const {Users} = require("../Models/index");
-const { toString } = require("express-validator/src/utils");
+const Users = require("../Models/User");
 
-exports.isAuth = (req, res, next) => {
+
+exports.is_auth = (req, res, next) => {
   var token = req.get("Authorization");
   token=toString(token)
   token=token.split(' ')[1]

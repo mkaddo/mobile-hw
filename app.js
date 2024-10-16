@@ -4,8 +4,8 @@ const sequelize=require("./Utils/DB")
 const authRouter=require("./Route/authRoute")
 const adminRoute=require("./Route/adminRoute")
 const touristRoute=require("./Route/touristRoute")
-const is_admin=require("./Middleware/isAdmin")
-const is_auth=require("./Middleware/is_auth")
+const {is_admin}=require("./Middleware/is_admin")
+const {is_auth}=require("./Middleware/is_auth")
 require("./Models/index")
 
 
@@ -24,7 +24,7 @@ app.use((error,req, res, next) =>{
   res.json({message:error.message})
 })
 sequelize
-  .sync({ force: false })
+  .sync({ force: true })
   .then(app.listen(3000))
   .catch((err) => {
     console.log(err);
