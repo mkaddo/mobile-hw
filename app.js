@@ -14,6 +14,9 @@ app.use(express.urlencoded({extended: true}))
 app.use('/',(req, res, next) =>{
   res.json({message: 'hello>>> this is main route for mobile flutter home work'})
 })
+app.use('/hello',(req, res, next) =>{
+  res.json({message: 'hello>>> this is main route for mobile flutter home work'})
+})
 app.use('/auth',authRouter)
 app.use('/tourist',is_auth,touristRoute)
 app.use('/admin',is_auth,is_admin,adminRoute)
