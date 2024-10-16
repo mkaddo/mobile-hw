@@ -27,7 +27,7 @@ app.use((error,req, res, next) =>{
   res.json({message:error.message})
 })
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(app.listen(3000))
   .catch((err) => {
     console.log(err);
