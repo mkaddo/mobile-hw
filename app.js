@@ -18,9 +18,7 @@ app.use('/admin',is_auth,is_admin,adminRoute)
 app.use('/',(req, res, next) =>{
   res.json({message: 'hello>>> this is main route for mobile flutter home work'})
 })
-app.use('/hello',(req, res, next) =>{
-  res.json({message: 'hello>>> this is main route for mobile flutter home work'})
-})
+
 
 app.use((error,req, res, next) =>{
   console.log(error)
